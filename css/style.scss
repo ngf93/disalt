@@ -142,7 +142,7 @@ a, a:hover, a:focus, a:active {
     outline: none !important;
 }
 h1, h2, h3, h4, h5, h6, p, label, span, a, button, form, fieldset, legend, select, input, textarea, button, div, blockquote, cite, figure, figcaption, table, ul, ol, dl, li, address {
-    line-height: 150%;
+    line-height: 130%;
     margin-bottom: 0px;
 }
 h1, .h1 {
@@ -150,12 +150,17 @@ h1, .h1 {
     text-align: left;
     font-weight: 700;
     margin-bottom: .75em;
+    line-height: 120%;
+    @media (max-width: $bp-md) {
+        font-size: 2.25em;
+    }
 }
 h2, .h2 {
     font-size: 1.8em;
     font-weight: 600;
     text-align: left;
     margin-bottom: .5em;
+    line-height: 120%;
 }
 h3 {
     font-size: 1.25em;
@@ -177,9 +182,9 @@ h5 {
 }
 h6 {
     font-size: 1em;
-    font-weight: 600;
+    font-weight: 500;
     text-align: left;
-    margin-bottom: 0em;
+    margin-bottom: 1em;
 }
 .main-font {font-family: $main-font;}
 .title-font {font-family: $title-font;}
@@ -238,18 +243,29 @@ h6 {
 
 /* Form elements */
 input, textarea {
-    background-color: $light-sky;
-    border: 1px solid $light-sky;
+    display: block;
+    background-color: $white;
     border-radius: $radius;
+    border: none;
     padding: .55em 1.1em;
     width: 100%;
     outline: none;
     display: block;
     transition: $transition;
     outline: none !important;
+    position: relative;
     @include placeholder($gray, 400);
-    &:hover, &:focus, &:active {
-        border: 1px solid $dark-gray;
+}
+.input {
+    background: linear-gradient(to right, $color-2, $color-1);
+    background-repeat: no-repeat;
+    padding: 2px;
+    border-radius: $radius;
+    position: relative;
+    z-index: 2;
+    input, textarea {
+        height: 100%;
+        border-radius: calc($radius - 2px);
     }
 }
 input {
@@ -329,6 +345,109 @@ input {
     opacity: 0.5;
     pointer-events: none;
 }
+
+.label-text {
+    position: relative;
+    div {
+        width: 100%;
+        position: relative;
+        z-index: 1;
+        border: 2px solid $color-1;
+        border-radius: $radius;
+        background-color: transparent;
+        color: inherit;
+        transition: background-color $transition;
+        padding: .8em 1.5em;
+        text-align: center;
+    }
+    input {
+        @include absBG(10, 0%, 100%);
+        opacity: 0;
+        cursor: pointer;
+        &:checked ~ div {
+            background-color: $color-1;
+        }
+    }
+}
+
+.range {
+    margin-bottom: 1em;
+    &-values {
+        @include flex(row, space-between, center, nowrap);
+        input {
+            flex: 1;
+        }
+        hr {
+            height: 1px;
+            width: 2em;
+            background-color: $gray;
+            margin: auto 1em;
+        }
+    }
+    &-slider {
+        position: relative;
+        width: 100%;
+        height: 0.375em;
+        border-radius: 0.375em;
+        background-color: $light-gray;
+        input {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            @include no-appearance();
+            background-color: transparent;
+            border: none;
+            display: block;
+            padding: 0px;
+            &::-moz-range-track {
+                height: 0.375em;
+                background: transparent;
+            }
+            &::-moz-range-thumb {
+                position: relative;
+                z-index: 10;
+                @include no-appearance();
+                width: 1.25em;
+                height: 1.25em;
+                border-radius: 50%;
+                background-color: $white;
+                transform: translateY(-0.4em);
+                cursor: grab;
+            }
+            &::-webkit-slider-runnable-track {
+                height: 2px;
+                background: transparent;
+            }
+            &::-webkit-slider-thumb {
+                position: relative;
+                z-index: 10;
+                @include no-appearance();
+                width: 1.25em;
+                height: 1.25em;
+                border-radius: 50%;
+                background-color: $color-1;
+                transform: translateY(-0.4em);
+                cursor: grab;
+                &:active {
+                    cursor: grabbing;
+                }
+            }
+        }
+        &-diapason {
+            position: absolute;
+            top: 0px;
+            left: 13%;
+            width: 38%;
+            height: 100%;
+            background-color: $color-1;
+            background-image: linear-gradient(to right, $color-2, $color-1);
+            z-index: 2;
+        }
+    }
+}
+
+
 select {
     @include no-appearance();
     cursor: pointer;
@@ -366,7 +485,7 @@ button {
 }
 .btn {
     @include flex(row, center, center, nowrap);
-    padding: 1.2em 1.8em;
+    padding: 1em 1.5em;
     text-align: center;
     transition: $transition;
     width: fit-content;
@@ -944,7 +1063,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     font-smooth: always;
-    @media (max-width: 768px) {
+    @media (max-width: $bp-xl) {
         font-size: 14px;
     }
     @media (max-width: 575px) {
@@ -959,6 +1078,9 @@ main {
     overflow: hidden;
     @include safariFix();
     min-height: calc(100vh - var(--h-height) - var(--f-height));
+    @media (max-width: $bp-lg) {
+        padding-top: 1.5em;
+    }
     @media (max-width: $bp-sm) {
         padding-top: 2em;
     }
@@ -999,8 +1121,11 @@ header {
     z-index: 500;
     padding-top: 1em;
     .top {
-        @include flex(row, space-between, flex-start, nowrap);
+        @include flex(row, space-between, center nowrap);
         padding: 2em 0em 1.5em;
+        @media (max-width: $bp-lg) {
+            padding: 1em 0em 0.5em;
+        }
         .logo {
             width: 200px;
             height: 60px;
@@ -1011,10 +1136,17 @@ header {
                 height: 40px;
             }
         }
+        .btn-menu {
+            font-size: 2.5em;
+            color: $color-1;
+        }
     }
     nav {
         border-top: 2px solid rgba($color: #000000, $alpha: 0.7);
         padding-top: 1.5em;
+        @media (max-width: $bp-lg) {
+            display: none;
+        }
         ul {
             @include list();
             @include flex(row, space-between, center, nowrap);
@@ -1058,6 +1190,15 @@ header {
     position: relative;
     overflow: hidden;
     height: 600px;
+    @media (max-width: $bp-xl) {
+        height: 500px;
+    }
+    @media (max-width: $bp-lg) {
+        height: 400px;
+    }
+    @media (max-width: $bp-sm) {
+        height: 65vw;
+    }
     .swiper-slide {
         position: relative;
         .bg {
@@ -1126,6 +1267,40 @@ header {
                 position: relative;
                 z-index: 10;
             }
+        }
+        p {
+            &:not(:last-child) {
+                margin-bottom: 1.25em;
+            }
+        }
+    }
+}
+
+
+.generate {
+    background-color: $black;
+    border-radius: $radiusXL;
+    padding: $radiusXL*2;
+    color: $white;
+    ul {
+        @include list();
+        column-count: 2;
+        gap: .75em;
+        @media (max-width: $bp-lg) {
+            column-count: 1;
+        }
+        li {
+            width: 100%;
+            margin-bottom: .75em;
+            label {
+                width: 100%;
+            }
+        }
+    }
+    .input {
+        input {
+            background-color: $black;
+            color: $white;
         }
     }
 }
@@ -2415,6 +2590,9 @@ footer {
     }
     nav {
         @include flex(row, space-between, stretch, nowrap);
+        @media (max-width: $bp-sm) {
+            display: block;
+        }
         ul {
             @include list();
             li {
@@ -2434,12 +2612,22 @@ footer {
     }
     .bottom {
         @include flex(row, space-between, flex-start, nowrap);
+        @media (max-width: $bp-md) {
+            display: block;
+        }
         p {
             line-height: 200%;
+            @media (max-width: $bp-md) {
+                text-align: center;
+            }
         }
         ul {
             @include list();
             text-align: right;
+            @media (max-width: $bp-md) {
+                text-align: center;
+                margin-top: 1em;
+            }
             a {
                 text-decoration: underline;
                 display: block;
