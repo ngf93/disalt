@@ -2,18 +2,18 @@ function toggleActive(btn){
   btn.classList.toggle('active');
 }
 
-var elements = document.querySelectorAll('.hoverMenu');
-function showHoverMenu(id){
-  for (let elem of elements) {
-    elem.style.display = "none";
-  }
-  document.getElementById(id).style.display = "block";
-}
-function hideHoverMenu(){
-  for (let elem of elements) {
-    elem.style.display = "none";
-  }
-}
+// var elements = document.querySelectorAll('.hoverMenu');
+// function showHoverMenu(id){
+//   for (let elem of elements) {
+//     elem.style.display = "none";
+//   }
+//   document.getElementById(id).style.display = "block";
+// }
+// function hideHoverMenu(){
+//   for (let elem of elements) {
+//     elem.style.display = "none";
+//   }
+// }
 
 
 
@@ -44,5 +44,5 @@ function toggleClass(elem){
 }
 
 
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+// const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+// const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))

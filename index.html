@@ -229,77 +229,54 @@
       </section>
 
       <section class="container mb-5">
-        <form action="" class="generate">
+        <form action="" class="generate" name="generate">
           <h2 class="h1">Выберите дизель <br/>генератор</h2>
           <h3>Дизель генераторы от компании ДИЗАЛЬТ</h3>
           <h3>Назначение электростанции:</h3>
           <div class="d-sm-flex mb-5">
-            <label for="" class="label-text">
+            <label class="label-text">
               <input type="radio" name="purpose">
               <div>Основной источник энергии</div>
             </label>
-            <label for="" class="label-text mt-2 mt-sm-0 ms-sm-4">
+            <label class="label-text mt-2 mt-sm-0 ms-sm-4">
               <input type="radio" name="purpose">
               <div>Резервный источник энергии</div>
             </label>
           </div>
 
           <h3>Электрическая мощность:</h3>
-          <div class="range">
+          <div class="range" data-min="200" data-max="1000">
             <div class="d-sm-flex mb-5">
-              <label for="" class="label-text">
+              <label class="label-text">
                 <input type="radio" name="power">
                 <div>кВт</div>
               </label>
-              <label for="" class="label-text mt-2 mt-sm-0 ms-sm-2 ms-md-4 me-sm-5">
+              <label class="label-text mt-2 mt-sm-0 ms-sm-2 ms-md-4 me-sm-5">
                 <input type="radio" name="power">
                 <div>кВа</div>
               </label>
-              <div class="input mt-4 mt-sm-0"><input type="number" placeholder="от"></div>
-              <div class="input mt-2 mt-sm-0 ms-sm-2 ms-md-4"><input type="number" placeholder="до"></div>
+              <div class="input mt-4 mt-sm-0">
+                <input type="number" placeholder="от" min="200" max="1000" class="inputMin">
+              </div>
+              <div class="input mt-2 mt-sm-0 ms-sm-2 ms-md-4">
+                <input type="number" placeholder="до" min="200" max="1000" class="inputMax">
+              </div>
             </div>
 
             <h3>Мощность:</h3>
-            <!-- <div class="range-values mb-4">
-              <input 
-                type="number" 
-                placeholder="от" 
-                min="200"
-                max="1000" 
-                step="50"
-                value="300"
-                onChange="handleMinChange()"
-              />
-              <hr />
-              <input 
-                type="number" 
-                placeholder="до" 
-                min="200"
-                max="1000"
-                step="50"
-                value="600"
-                onChange="handleMaxChange()"
-              />
-            </div> -->
             <div class="range-slider">
               <div class="range-slider-diapason"></div>
               <input 
-                class="range-input-min"
-                type="range" 
-                min="200"
-                max="1000" 
-                step="50"
-                value="300"
-                onChange="handleMinChange()"
-              />
-              <input
-                class="range-input-max"
+                class="rangeMin"
                 type="range" 
                 min="200"
                 max="1000"
-                step="50"
-                value="600"
-                onChange="handleMaxChange()"
+              />
+              <input
+                class="rangeMax"
+                type="range"
+                min="200"
+                max="1000"
               />
             </div>
           </div>
@@ -310,43 +287,43 @@
               <h6>Импортные (Европа, Турция, Корея)</h6>
               <ul>
                 <li>
-                  <label for="" class="label-text">
+                  <label class="label-text">
                     <input type="checkbox" name="Engine">
                     <div>Perkins</div>
                   </label>
                 </li>
                 <li>
-                  <label for="" class="label-text">
+                  <label class="label-text">
                     <input type="checkbox" name="Engine">
                     <div>Cummins</div>
                   </label>
                 </li>
                 <li>
-                  <label for="" class="label-text">
+                  <label class="label-text">
                     <input type="checkbox" name="Engine">
                     <div>Iveco</div>
                   </label>
                 </li>
                 <li>
-                  <label for="" class="label-text">
+                  <label class="label-text">
                     <input type="checkbox" name="Engine">
                     <div>Mitsubishi</div>
                   </label>
                 </li>
                 <li>
-                  <label for="" class="label-text">
+                  <label class="label-text">
                     <input type="checkbox" name="Engine">
                     <div>Volvo Penta</div>
                   </label>
                 </li>
                 <li>
-                  <label for="" class="label-text">
+                  <label class="label-text">
                     <input type="checkbox" name="Engine">
                     <div>John Deere</div>
                   </label>
                 </li>
                 <li>
-                  <label for="" class="label-text">
+                  <label class="label-text">
                     <input type="checkbox" name="Engine">
                     <div>YANMAR</div>
                   </label>
@@ -357,13 +334,13 @@
               <h6>Отечественные</h6>
               <ul>
                 <li>
-                  <label for="" class="label-text">
+                  <label class="label-text">
                     <input type="checkbox" name="Engine">
                     <div>ММЗ</div>
                   </label>
                 </li>
                 <li>
-                  <label for="" class="label-text">
+                  <label class="label-text">
                     <input type="checkbox" name="Engine">
                     <div>ЯМЗ</div>
                   </label>
@@ -374,37 +351,37 @@
               <h6>Китай</h6>
               <ul>
                 <li>
-                  <label for="" class="label-text">
+                  <label class="label-text">
                     <input type="checkbox" name="Engine">
                     <div>Baudouin</div>
                   </label>
                 </li>
                 <li>
-                  <label for="" class="label-text">
+                  <label class="label-text">
                     <input type="checkbox" name="Engine">
                     <div>SDEC</div>
                   </label>
                 </li>
                 <li>
-                  <label for="" class="label-text">
+                  <label class="label-text">
                     <input type="checkbox" name="Engine">
                     <div>WEICHAI</div>
                   </label>
                 </li>
                 <li>
-                  <label for="" class="label-text">
+                  <label class="label-text">
                     <input type="checkbox" name="Engine">
                     <div>Ricardo</div>
                   </label>
                 </li>
                 <li>
-                  <label for="" class="label-text">
+                  <label class="label-text">
                     <input type="checkbox" name="Engine">
                     <div>WOLING</div>
                   </label>
                 </li>
                 <li>
-                  <label for="" class="label-text">
+                  <label class="label-text">
                     <input type="checkbox" name="Engine">
                     <div>ALPHA-R</div>
                   </label>
@@ -545,5 +522,6 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="js/sliders.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/rangeSlider.js"></script>
   </body>
 </html>
