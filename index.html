@@ -16,20 +16,23 @@
     <header class="container">
       <div class="top">
         <a href="index.html">
-          <img src="img/logo.svg" alt="logo" class="logo">
+          <img src="img/logo.png" alt="logo" class="logo">
         </a>
-        <div class="d-none d-lg-block">
+        <div class="d-none d-lg-block ms-5">
           <h4>Напишите нам</h4>
           <a href="mailto:info@diz-alt.ru">info@diz-alt.ru</a>
         </div>
-        <div class="d-none d-lg-block">
+        <div class="d-none d-lg-block ms-4">
           <h4>Бесплатный звонок</h4>
           <a href="tel:+7 846 25 40 163">+7 846 25 40 163</a>
         </div>
-        <button type="button" class="btn-gradient d-none d-md-block" data-bs-toggle="modal" data-bs-target="#modalCallback">Заказать звонок</button>
-        <button type="button" class="btn-gradient d-none d-md-block" data-bs-toggle="modal" data-bs-target="#modalCallback">Консультация</button>
+        <button type="button" class="btn-gradientBorder d-none d-lg-block ms-auto" data-bs-toggle="modal" data-bs-target="#modalCallback">Заказать звонок</button>
+        <button type="button" class="btn-gradient d-none d-xl-block ms-4" data-bs-toggle="modal" data-bs-target="#modalCallback">Консультация</button>
+        <button type="button" class="btn-gradientBorder px-3 ms-auto ms-lg-4">
+          <img src="img/icon/cart.png" alt="cart">
+        </button>
 
-        <button type="button" class="d-lg-none btn-menu">
+        <button type="button" class="d-lg-none btn-menu ms-4 ms-sm-5">
           <svg width="1em" height="1em" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect y="10" width="48" height="3" fill="currentColor"/>
             <rect x="1" y="23" width="48" height="3" fill="currentColor"/>
@@ -144,12 +147,16 @@
             <img src="img/slide1.jpg" alt="slide1" class="bg">
             <div class="container">
               <h2>Резервные источники питания</h2>
+              <h3>Небольшой текст-описание товара</h3>
+              <button type="button" class="btn-gradient px-5">В каталог</button>
             </div>
           </div>
           <div class="swiper-slide">
             <img src="img/slide1.jpg" alt="slide1" class="bg">
             <div class="container">
               <h2>Резервные источники питания</h2>
+              <h3>Небольшой текст-описание товара</h3>
+              <button type="button" class="btn-gradient px-5">В каталог</button>
             </div>
           </div>
         </div>
@@ -166,70 +173,59 @@
       </section>
 
       <section class="benefits container mb-5">
-        <div class="block-black mb-5">
+        <div class="block-black mb-4 mb-sm-5">
           <div class="row align-items-center">
             <div class="col-12 col-md-9">
               <h2 class="h1 mb-0">Преимущества <br/>работы с нами</h2>
             </div>
-            <div class="col-12 col-3 mt-4 mt-md-0">
+            <div class="col-12 col-md-3 mt-4 mt-md-0">
               <a href="" class="btn-color1 w-100 mb-3">Каталог</a>
               <a href="" class="btn-color2 w-100">Подобрать</a>
             </div>
           </div>
         </div>
 
-        <div class="row g-4">
-          <div class="col-12 col-lg-4">
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-1 g-4">
-              <div>
-                <div class="block-color1">
-                  <h2>Надежность</h2>
-                  <p>Собственное производство, площадь более 2000 кв.м.;</p>
-                  <p>Высокая квалификация специалистов, с опытом работы в производственной компании. Учли все недостатки и премущества в работе;</p>
-                  <p>Контроль качества на всех этапах;</p>
-                  <p>Прозрачные условия работы с Потребителем</p>
-                </div>
-              </div>
-              <div>
-                <form class="block-gradientBorder h-100">
-                  <h2>Получить консультацию</h2>
-                  <div class="input"><input type="tel" placeholder="+7 (999) 999-99-99"></div>
-                  <div class="input mt-2"><input type="tel" placeholder="Имя" class=""></div>
-                  <button type="button" class="btn-gradient w-100 mt-3">Заказать</button>
-                </form>
-              </div>
-            </div>
+        <div class="benefits-grid">
+          <div class="block-color1 grid-1">
+            <h2>Надежность</h2>
+            <p>Собственное производство, площадь более 2000 кв.м.;</p>
+            <p>Высокая квалификация специалистов, с опытом работы в производственной компании. Учли все недостатки и премущества в работе;</p>
+            <p>Контроль качества на всех этапах;</p>
+            <p>Прозрачные условия работы с Потребителем</p>
           </div>
-          <div class="col-12 col-lg-8 d-flex flex-column">
-            <div class="block-color1 mb-4">
-              <h2>Реальная гарантия от производителя</h2>
-              <p>Гарантия на весь товар по сроку службы и наработке;</p>
-              <p>Предоставляем полный спектр услуг по выполнению пуско-наладочных, строительно монтажных работ, технического обслуживания и ремонта включая выполнение текущего, среднего и капитального на всей территории России.</p>
-            </div>
-            <div class="flex-1 row row-cols-1 row-cols-md-2">
-              <div>
-                <div class="block-black h-100">
-                  <h2>Индивидуальный подход</h2>
-                  <p>Внимательное изучение задач Заказчика;</p>
-                  <p>Консультирование. Ориентация на потребность Заказчика;</p>
-                  <p>Не навязываем не нужные опции;</p>
-                  <p>Короткие сроки изготовления;</p>
-                  <p>ДОСТАВКА любым транспортом на всей территории России.</p>
-                  <p>Страхование груза от непредвиденных ситуаций</p>
-                </div>
-              </div>
-              <div class="mt-4 mt-md-0">
-                <div class="block-black h-100">
-                  <h2>Выгода</h2>
-                  <p>ДЕШЕВЛЕ на 30-40% импортных аналогов и проивзодителей ДЭС / контейнеров на территории России за счет:</p>
-                  <p>- низких накладных расходов;</p>
-                  <p>- развитой внутренней и внешнеэкономической деятельностью;</p>
-                  <p>- долгосрочных партнерский отношений с ведущими производителями основного оборудования и комплектующих.</p>
-                </div>
-              </div>
-            </div>
+
+          <div class="block-black grid-2">
+            <h2>Индивидуальный подход</h2>
+            <p>Внимательное изучение задач Заказчика;</p>
+            <p>Консультирование. Ориентация на потребность Заказчика;</p>
+            <p>Не навязываем не нужные опции;</p>
+            <p>Короткие сроки изготовления;</p>
+            <p>ДОСТАВКА любым транспортом на всей территории России.</p>
+            <p>Страхование груза от непредвиденных ситуаций</p>
           </div>
+
+          <div class="block-color1 grid-3">
+            <h2>Реальная гарантия от производителя</h2>
+            <p>Гарантия на весь товар по сроку службы и наработке;</p>
+            <p>Предоставляем полный спектр услуг по выполнению пуско-наладочных, строительно монтажных работ, технического обслуживания и ремонта включая выполнение текущего, среднего и капитального на всей территории России.</p>
+          </div>
+          
+          <div class="block-black grid-4">
+            <h2>Выгода</h2>
+            <p>ДЕШЕВЛЕ на 30-40% импортных аналогов и проивзодителей ДЭС / контейнеров на территории России за счет:</p>
+            <p>- низких накладных расходов;</p>
+            <p>- развитой внутренней и внешнеэкономической деятельностью;</p>
+            <p>- долгосрочных партнерский отношений с ведущими производителями основного оборудования и комплектующих.</p>
+          </div>
+
+          <form class="block-gradientBorder grid-5">
+            <h2>Получить консультацию</h2>
+            <div class="input"><input type="tel" placeholder="+7 (999) 999-99-99"></div>
+            <div class="input mt-2"><input type="tel" placeholder="Имя" class=""></div>
+            <button type="button" class="btn-gradient w-100 mt-3">Заказать</button>
+          </form>
         </div>
+
       </section>
 
       <section class="container mb-5">
@@ -434,7 +430,7 @@
         <ul class="text-center">
           <li>
             <a href="index.html">
-              <img src="img/logo.svg" alt="logo" class="logo">
+              <img src="img/logo.png" alt="logo" class="logo">
             </a>
           </li>
           <li><a href="mailto:info@diz-alt.ru">info@diz-alt.ru</a></li>

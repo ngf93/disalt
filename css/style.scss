@@ -247,7 +247,7 @@ input, textarea {
     background-color: $white;
     border-radius: $radius;
     border: none;
-    padding: .55em 1.1em;
+    padding: .8em 1.5em;
     width: 100%;
     outline: none;
     display: block;
@@ -515,6 +515,38 @@ button {
             transition-property: filter;
         }
     }
+    &-gradientBorder {
+        @extend .btn;
+        pointer-events: all;
+        color: $black;
+        background-image: linear-gradient(to right, $color-2 0%, $color-1 50%, $color-2 100%);
+        background-repeat: no-repeat;
+        background-size: 200% 100%;
+        background-position: 0% 50%;
+        filter: grayscale(0);
+        transition: background-position $transition;
+        transition-property: background-position, filter;
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            background-color: $white;
+            top: 2px;
+            left: 2px;
+            width: calc(100% - 4px);
+            height: calc(100% - 4px);
+            border-radius: calc($radius - 2px);
+        }
+        &:hover, &:focus, &:active, &.active {
+            background-position: 100% 50%;
+            filter: grayscale(0);
+        }
+        &:disabled {
+            pointer-events: none;
+            filter: grayscale(1);
+            transition-property: filter;
+        }
+    }
     &-color1 {
         @extend .btn;
         background-color: $color-1;
@@ -696,6 +728,9 @@ hr {margin: 0;}
         transform: translateY(-50%);
         transition: color $transition;
         outline: none !important;
+        @media (max-width: $bp-md) {
+            font-size: 2em;
+        }
         &:hover, &:focus, &:active {
             color: $color-2;
         }
@@ -708,10 +743,22 @@ hr {margin: 0;}
         &-prev {
             @extend .swiper-button;
             left: 2em;
+            @media (max-width: $bp-lg) {
+                left: 1em;
+            }
+            @media (max-width: $bp-sm) {
+                left: .5em;
+            }
         }
         &-next {
             @extend .swiper-button;
             right: 2em;
+            @media (max-width: $bp-lg) {
+                right: 1em;
+            }
+            @media (max-width: $bp-sm) {
+                right: .5em;
+            }
         }
     }
     &-fade {
@@ -1223,6 +1270,7 @@ header {
             h2 {
                 font-size: 2.25em;
             }
+            h2, h3 {text-align: center;}
             .btn-gradient {
                 margin-top: 4em;
             }
@@ -1272,6 +1320,51 @@ header {
             &:not(:last-child) {
                 margin-bottom: 1.25em;
             }
+        }
+    }
+    &-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 210px 110px 310px;
+        grid-template-areas: 
+        "grid1 grid3 grid3"
+        "grid1 grid2 grid4"
+        "grid5 grid2 grid4";
+        gap: $radiusXL;
+        @media (max-width: $bp-xxl) {
+            grid-template-rows: 215px 120px 310px;
+        }
+        @media (max-width: $bp-xl) {
+            grid-template-rows: 200px 100px 280px;
+        }
+        @media (max-width: $bp-lg) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 300px 65px 295px 250px;
+            grid-template-areas: 
+            "grid1 grid2"
+            "grid4 grid2"
+            "grid4 grid3"
+            "grid5 grid5";
+        }
+        @media (max-width: $bp-md) {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            grid-template-areas: "grid1" "grid2" "grid3" "grid4" "grid5";
+        }
+        .grid-1 {
+            grid-area: grid1;
+        }
+        .grid-2 {
+            grid-area: grid2;
+        }
+        .grid-3 {
+            grid-area: grid3;
+        }
+        .grid-4 {
+            grid-area: grid4;
+        }
+        .grid-5 {
+            grid-area: grid5;
         }
     }
 }
