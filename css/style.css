@@ -73,7 +73,7 @@ h4 {
 
 h5 {
   font-size: 1em;
-  font-weight: 800;
+  font-weight: 700;
   text-align: left;
   margin-bottom: 0em;
 }
@@ -192,16 +192,8 @@ h6 {
   color: #373737;
 }
 
-.sky {
-  color: #69AEFF;
-}
-
-.red {
-  color: #F04438;
-}
-
-.green {
-  color: #82D42B;
+.color-1 {
+  color: #F7931E;
 }
 
 .link {
@@ -267,8 +259,8 @@ input[type=checkbox] {
   margin: 0px;
   width: 1.45em;
   height: 1.45em;
-  background-color: #F6FAFF;
-  border: 1px solid #F6FAFF;
+  background-color: #E3EBEF;
+  border: 1px solid #E3EBEF;
   border-radius: 5px;
   box-shadow: none;
   transition: 300ms ease-in;
@@ -289,7 +281,7 @@ input[type=checkbox]::after {
   transition: 300ms ease-in;
 }
 input[type=checkbox]:hover, input[type=checkbox]:focus, input[type=checkbox]:active {
-  border: 1px solid #69AEFF;
+  border: 1px solid #F7931E;
 }
 input[type=checkbox]:checked::after {
   opacity: 1;
@@ -519,7 +511,7 @@ button {
   outline: none !important;
 }
 
-.btn, .btn-color2, .btn-color1, .btn-gradientBorder, .btn-gradient {
+.btn, .btn-blackBorder, .btn-black, .btn-color2, .btn-color1, .btn-gradientBorder, .btn-gradient {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -557,6 +549,7 @@ button {
   transition-property: filter;
 }
 .btn-gradientBorder {
+  position: relative;
   pointer-events: all;
   color: #181818;
   background-image: linear-gradient(to right, #FFE500 0%, #F7931E 50%, #FFE500 100%);
@@ -611,6 +604,36 @@ button {
   background-color: #F7931E;
 }
 .btn-color2:disabled {
+  pointer-events: none;
+  filter: grayscale(1);
+  transition-property: filter;
+}
+.btn-black {
+  background-color: #181818;
+  color: #fff;
+  transition: background-color 300ms ease-in;
+}
+.btn-black:hover, .btn-black:focus, .btn-black:active, .btn-black.active {
+  color: #fff;
+  background-color: #F7931E;
+}
+.btn-black:disabled {
+  pointer-events: none;
+  filter: grayscale(1);
+  transition-property: filter;
+}
+.btn-blackBorder {
+  background-color: transparent;
+  color: #181818;
+  border: 2px solid #181818;
+  transition: background-color 300ms ease-in;
+  transition-property: background-color, color;
+}
+.btn-blackBorder:hover, .btn-blackBorder:focus, .btn-blackBorder:active, .btn-blackBorder.active {
+  color: #fff;
+  background-color: #181818;
+}
+.btn-blackBorder:disabled {
   pointer-events: none;
   filter: grayscale(1);
   transition-property: filter;
@@ -883,6 +906,7 @@ hr {
 
 nav.breadcrumbs {
   margin-bottom: 2em;
+  font-weight: 500;
 }
 @media (max-width: 767.98px) {
   nav.breadcrumbs {
@@ -1308,7 +1332,7 @@ header .top {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center nowrap;
+  align-items: center;
   flex-wrap: nowrap;
   padding: 2em 0em 1.5em;
 }
@@ -1327,7 +1351,7 @@ header .top .logo {
 }
 @media (max-width: 575.98px) {
   header .top .logo {
-    width: 130px;
+    width: 160px;
     height: 40px;
   }
 }
@@ -1595,10 +1619,10 @@ header nav ul li a:hover, header nav ul li a:focus, header nav ul li a:active {
   isolation: isolate;
   transform: translateZ(0);
   transition: 300ms ease-in;
-  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
 }
 .product-card:hover {
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
 }
 .product-card-img {
   position: relative;
@@ -2235,7 +2259,7 @@ header nav ul li a:hover, header nav ul li a:focus, header nav ul li a:active {
   width: 100%;
 }
 .filterForm-item {
-  margin-bottom: 1.5em;
+  margin-bottom: 2em;
 }
 .filterForm-toggler {
   display: flex;
@@ -2244,6 +2268,7 @@ header nav ul li a:hover, header nav ul li a:focus, header nav ul li a:active {
   align-items: center;
   flex-wrap: nowrap;
   width: 100%;
+  font-weight: 500;
 }
 .filterForm-toggler .icon {
   width: 1.5em;

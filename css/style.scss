@@ -176,7 +176,7 @@ h4 {
 }
 h5 {
     font-size: 1em;
-    font-weight: 800;
+    font-weight: 700;
     text-align: left;
     margin-bottom: 0em;
 }
@@ -225,9 +225,7 @@ h6 {
 .white {color: $white;}
 .gray {color: $gray;}
 .dark {color: $dark-gray;}
-.sky {color: $sky;}
-.red {color: $red;}
-.green {color: $green2;}
+.color-1 {color: $color-1;}
 
 .link {
     color: $dark-gray;
@@ -274,8 +272,8 @@ input {
         @include no-appearance;
         width: 1.45em;
         height: 1.45em;
-        background-color: $light-sky;
-        border: 1px solid $light-sky;
+        background-color: $light-gray;
+        border: 1px solid $light-gray;
         border-radius: 5px;
         box-shadow: none;
         transition: $transition;
@@ -295,7 +293,7 @@ input {
             transition: $transition;
         }
         &:hover, &:focus, &:active {
-            border: 1px solid $sky;
+            border: 1px solid $color-1;
         }
         &:checked {
             // background-color: $sky;
@@ -516,6 +514,7 @@ button {
         }
     }
     &-gradientBorder {
+        position: relative;
         @extend .btn;
         pointer-events: all;
         color: $black;
@@ -570,6 +569,38 @@ button {
         &:hover, &:focus, &:active, &.active {
             color: $black;
             background-color: $color-1;
+        }
+        &:disabled {
+            pointer-events: none;
+            filter: grayscale(1);
+            transition-property: filter;
+        }
+    }
+    &-black {
+        @extend .btn;
+        background-color: $black;
+        color: $white;
+        transition: background-color $transition;
+        &:hover, &:focus, &:active, &.active {
+            color: $white;
+            background-color: $color-1;
+        }
+        &:disabled {
+            pointer-events: none;
+            filter: grayscale(1);
+            transition-property: filter;
+        }
+    }
+    &-blackBorder {
+        @extend .btn;
+        background-color: transparent;
+        color: $black;
+        border: 2px solid $black;
+        transition: background-color $transition;
+        transition-property: background-color, color;
+        &:hover, &:focus, &:active, &.active {
+            color: $white;
+            background-color: $black;
         }
         &:disabled {
             pointer-events: none;
@@ -793,6 +824,7 @@ hr {margin: 0;}
 }
 nav.breadcrumbs {
     margin-bottom: 2em;
+    font-weight: 500;
     @media (max-width: $bp-md) {
         display: none;
     }
@@ -1168,7 +1200,7 @@ header {
     z-index: 500;
     padding-top: 1em;
     .top {
-        @include flex(row, space-between, center nowrap);
+        @include flex(row, space-between, center, nowrap);
         padding: 2em 0em 1.5em;
         @media (max-width: $bp-lg) {
             padding: 1em 0em 0.5em;
@@ -1179,7 +1211,7 @@ header {
             object-fit: contain;
             object-position: left center;
             @media (max-width: $bp-sm) {
-                width: 130px;
+                width: 160px;
                 height: 40px;
             }
         }
@@ -1412,9 +1444,9 @@ header {
     background-color: $white;
     @include safariFix();
     transition: $transition;
-    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
     &:hover {
-        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05);
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);;
     }
     &-img {
         position: relative;
@@ -1902,11 +1934,12 @@ header {
 .filterForm {
     width: 100%;
     &-item {
-        margin-bottom: 1.5em
+        margin-bottom: 2em;
     }
     &-toggler {
         @include flex(row, space-between, center, nowrap);
         width: 100%;
+        font-weight: 500;
         .icon {
             width: 1.5em;
             height: 1.5em;
