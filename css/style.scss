@@ -7,12 +7,12 @@ $radiusXL: 1.5em;
 $color-1: #F7931E;
 $color-2: #FFE500;
 
-$green: #52EB89;
+$green: #81D32A;
 $green2: #82D42B;
 $green3: #70B428;
 $yellow: #F9ED37;
 $light-sky: #F6FAFF;
-$sky: #69AEFF;
+
 $hover: #63A4F0;
 $disabled: #B5D7FF;
 $light-blue: #F2FBFF;
@@ -154,6 +154,10 @@ h1, .h1 {
     @media (max-width: $bp-md) {
         font-size: 2.25em;
     }
+    &.inner {
+        font-size: 2.5em;
+        font-weight: 400;
+    }
 }
 h2, .h2 {
     font-size: 1.8em;
@@ -226,16 +230,17 @@ h6 {
 .gray {color: $gray;}
 .dark {color: $dark-gray;}
 .color-1 {color: $color-1;}
+.green {color: $green;}
 
 .link {
     color: $dark-gray;
     transition: $transition;
     &.white {color: $white;}
     &:hover, &:focus {
-        color: $sky;
+        color: $color-1;
     }
     &:active {
-        color: $blue;
+        color: $color-2;
     }
 }
 
@@ -285,7 +290,7 @@ input {
             transform: translate(-50%, -50%);
             height: 1rem;
             width: 1rem;
-            background-image: url(../img/icon/checkMark-black.svg);
+            background-image: url(../imgs/icons/checkMark-black.svg);
             background-repeat: no-repeat;
             background-size: 90%;
             background-position: center;
@@ -296,7 +301,7 @@ input {
             border: 1px solid $color-1;
         }
         &:checked {
-            // background-color: $sky;
+            // background-color: $color-1;
             &::after {
                 opacity: 1;
             }
@@ -307,13 +312,13 @@ input {
         width: 1.45em;
         height: 1.45em;
         background-color: $white;
-        border: 1px solid rgba($color: $sky, $alpha: 0.5);
+        border: 1px solid rgba($color: $color-1, $alpha: 0.5);
         border-radius: 50%;
         box-shadow: none;
         transition: $transition;
         position: relative;
         &:hover, &:focus, &:active {
-            border: 1px solid $sky;
+            border: 1px solid $color-1;
         }
         &::before {
             content: '';
@@ -327,7 +332,7 @@ input {
             background-color: $white;
         }
         &:checked {
-            background-color: $sky;
+            background-color: $color-1;
         }
     }
     &[type=number]{
@@ -608,6 +613,33 @@ button {
             transition-property: filter;
         }
     }
+    &-icon {
+        @include flex();
+        font-size: 2em;
+        svg {
+            path {
+                transition: $transition;
+                stroke: $icon-color;
+                fill: transparent;
+            }
+        }
+        &:hover, &:focus {
+            svg {
+                path {
+                    stroke: $color-1;
+                    fill: transparent;
+                }
+            }
+        }
+        &.active {
+            svg {
+                path {
+                    stroke: $color-1;
+                    fill: $color-1;
+                }
+            }
+        }
+    }
 }
 
 label {
@@ -640,7 +672,7 @@ label {
         opacity: 0;
         @include absBG(10, 0px, 100%);
         &:hover + .pill, &:focus + .pill {
-            border: 1px solid $sky;
+            border: 1px solid $color-1;
         }
         &:checked + .pill, &:active + .pill {
             border: 1px solid $dark-gray;
@@ -649,7 +681,7 @@ label {
             background-color: $light-sky;
         }
         &:checked + .pill-2, &:active + .pill-2 {
-            background-color: $sky;
+            background-color: $color-1;
             color: $white;
             font-weight: 700;
         }
@@ -671,7 +703,7 @@ label {
         position: absolute;
         top: 50%;
         right: 1em;
-        color: $sky;
+        color: $color-1;
         font-size: .8em;
         transform: translateY(-50%);
         transition: $transition;
@@ -743,11 +775,6 @@ hr {margin: 0;}
     }
 }
 .swiper {
-    height: fit-content;
-    padding-bottom: 4em;
-    @media (max-width: $bp-lg) {
-        padding-bottom: 0px;
-    }
     &-button {
         position: absolute;
         top: 50%;
@@ -801,12 +828,18 @@ hr {margin: 0;}
         }
     }
     &-4 {
+        position: relative;
+        overflow: hidden;
         .swiper-wrapper {
             align-items: stretch;
             .swiper-slide {
                 height: unset;
             }
         }
+    }
+    &-5 {
+        position: relative;
+        overflow: hidden;
     }
 }
 .table {
@@ -918,7 +951,7 @@ nav.pagination {
                 position: absolute;
                 bottom: 5%;
                 left: 50%;
-                background-color: $sky;
+                background-color: $color-1;
                 width: 3em;
                 height: 2px;
                 border-radius: 1px;
@@ -931,7 +964,7 @@ nav.pagination {
                 }
             }
             &:hover, &:focus {
-                color: $sky;
+                color: $color-1;
             }
         }
     }
@@ -953,7 +986,7 @@ nav.pagination {
                     color: $dark-gray;
                 }
                 &:hover, &:focus {
-                    color: $sky;
+                    color: $color-1;
                 }
             }
         }
@@ -1006,7 +1039,7 @@ nav.pagination {
             left: 0;
             height: 2px;
             border-radius: 2px;
-            background-color: $sky;
+            background-color: $color-1;
         }
         .thumb {
             position: absolute;
@@ -1018,7 +1051,7 @@ nav.pagination {
             margin-left: -11px;
             cursor: pointer;
             background-color: #FFF;
-            border: 2px solid $sky;
+            border: 2px solid $color-1;
             border-radius: 50%;
             outline: none;
         }
@@ -1028,7 +1061,7 @@ nav.pagination {
             margin-left: -18px;
             top: -40px;
             z-index:3;
-            background-color: $sky;
+            background-color: $color-1;
             color: #fff;
             width: 28px;
             height: 28px;
@@ -1048,7 +1081,7 @@ nav.pagination {
                 border-right: 14px solid transparent;
                 border-top-width: 16px;
                 border-top-style: solid;
-                border-top-color: $sky;
+                border-top-color: $color-1;
             }
             span {
                 font-size: 12px;
@@ -1151,6 +1184,7 @@ body {
 }
 
 main {
+    --padT: 3em;
     padding-top: 3em;
     position: relative;
     background-color: transparent;
@@ -1158,14 +1192,14 @@ main {
     @include safariFix();
     min-height: calc(100vh - var(--h-height) - var(--f-height));
     @media (max-width: $bp-lg) {
-        padding-top: 1.5em;
+        --padT: 1.5em;
     }
     @media (max-width: $bp-sm) {
-        padding-top: 2em;
+        --padT: 2em;
     }
     .bgTop {
         --h: 400px;
-        @include absBG(-1, 0px, var(--h));
+        @include absBG(-1, var(--padT), var(--h));
         overflow: hidden;
         &.darken {filter: brightness(0.8);}
         &.long {
@@ -1462,11 +1496,11 @@ header {
     &-characteristics {
         @include list();
         font-size: .8em;
-        margin-bottom: 1em;
+        margin-bottom: auto;
         li {
             @include flex(row, space-between, baseline, nowrap);
             margin-bottom: .5em;
-            background-image: url(../img/bg/dot.svg);
+            background-image: url(../imgs/bg/dot.svg);
             background-repeat: repeat-x;
             background-position: 50% 85%;
             span {
@@ -1531,7 +1565,7 @@ header {
         color: $light-gray;
         transition: $transition;
         &:hover {
-            color: $sky;
+            color: $color-1;
         }
         svg {
             font-size: 2em;
@@ -1623,7 +1657,7 @@ header {
         }
     }
     div.feature {
-        background-color: $sky;
+        background-color: $color-1;
         color: $white;
         border-radius: $radius;
         padding: 0.5em;
@@ -1692,7 +1726,8 @@ header {
                         opacity: 0;
                         cursor: pointer;
                         &:checked + .text {
-                            background-color: $sky;
+                            background-color: $color-1;
+                            background-image: linear-gradient(to right, $color-2, $color-1);
                             color: $white;
                             box-shadow: 0px 0px 6px 0px rgba(63, 104, 153, 0.13);
                             .price {
@@ -1715,7 +1750,7 @@ header {
             @include flex(row, flex-start, center, nowrap);
             transition: $transition;
             &:hover, &:after, &:active {
-                color: $sky;
+                color: $color-1;
             }
             img {
                 width: 3em;
@@ -2203,7 +2238,7 @@ header {
     &-2 {
         .box-blue {
             @include box();
-            background-color: $sky;
+            background-color: $color-1;
             padding-bottom: 5em;
         }
         .img {
@@ -2376,10 +2411,11 @@ header {
                 margin: 0 auto;
             }
         }
-        h6 {
+        h5 {
             grid-area: title;
             font-size: .8em;
             @include textEllipsis();
+            margin-bottom: 0px;
             @media (max-width: $bp-sm) {
                 white-space: normal;
                 overflow: auto;
@@ -2431,12 +2467,15 @@ header {
     }
 }
 .formCart {
+    min-height: 230px;
     @media (max-width: $bp-lg) {
         box-shadow: none;
         padding: 0px;
         background-color: transparent;
     }
     &-main {
+        height: 100%;
+        @include flex(column, space-between, stretch, nowrap);
         @media (max-width: $bp-lg) {
             @include box();
             padding: 1em 1.5em;
@@ -2454,8 +2493,8 @@ header {
         &:hover, &:focus, &:active {
             svg {
                 path {
-                    fill: $sky;
-                    stroke: $sky;
+                    fill: $color-1;
+                    stroke: $color-1;
                 }
             }
         }
@@ -2569,7 +2608,7 @@ header {
     }
     &:hover, &:focus, &:active {
         svg {
-            color: $sky;
+            color: $color-1;
         }
     }
 }
@@ -2624,7 +2663,7 @@ header {
     li {
         font-size: 1.5em;
         font-weight: 700;
-        color: $sky;
+        color: $color-1;
         padding: 1em;
         border-radius: 10px;
         background: $white;
