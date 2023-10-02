@@ -45,12 +45,27 @@ h1, .h1 {
 }
 @media (max-width: 767.98px) {
   h1, .h1 {
-    font-size: 2.25em;
+    font-size: 2em;
+  }
+}
+@media (max-width: 575.98px) {
+  h1, .h1 {
+    font-size: 1.5em;
   }
 }
 h1.inner, .h1.inner {
   font-size: 2.5em;
   font-weight: 400;
+}
+@media (max-width: 767.98px) {
+  h1.inner, .h1.inner {
+    font-size: 2em;
+  }
+}
+@media (max-width: 575.98px) {
+  h1.inner, .h1.inner {
+    font-size: 1.5em;
+  }
 }
 
 h2, .h2 {
@@ -59,6 +74,11 @@ h2, .h2 {
   text-align: left;
   margin-bottom: 0.5em;
   line-height: 120%;
+}
+@media (max-width: 575.98px) {
+  h2, .h2 {
+    font-size: 1.4em;
+  }
 }
 
 h3 {
@@ -233,11 +253,6 @@ input, textarea {
   position: relative;
 }
 input::-moz-placeholder, textarea::-moz-placeholder {
-  color: #a3a3a3;
-  font-weight: 400;
-  font-size: 0.9em;
-}
-input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   color: #a3a3a3;
   font-weight: 400;
   font-size: 0.9em;
@@ -466,11 +481,9 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   border-radius: 50%;
   background-color: #F7931E;
   transform: translateY(-0.4em);
-  cursor: -webkit-grab;
   cursor: grab;
 }
 .range-slider input::-webkit-slider-thumb:active {
-  cursor: -webkit-grabbing;
   cursor: grabbing;
 }
 .range-slider-diapason {
@@ -535,7 +548,6 @@ button {
   padding: 1em 1.5em;
   text-align: center;
   transition: 300ms ease-in;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   border: none;
@@ -826,7 +838,7 @@ hr {
 }
 @media (max-width: 575.98px) {
   .box.empty {
-    height: 50vw;
+    height: 80vw;
   }
 }
 @media (max-width: 991.98px) {
@@ -869,7 +881,12 @@ hr {
 }
 @media (max-width: 767.98px) {
   .swiper-button, .swiper-button-next, .swiper-button-prev {
-    font-size: 2em;
+    font-size: 1.25em;
+  }
+}
+@media (max-width: 575.98px) {
+  .swiper-button, .swiper-button-next, .swiper-button-prev {
+    font-size: 1em;
   }
 }
 .swiper-button:hover, .swiper-button-next:hover, .swiper-button-prev:hover, .swiper-button:focus, .swiper-button-next:focus, .swiper-button-prev:focus, .swiper-button:active, .swiper-button-next:active, .swiper-button-prev:active {
@@ -1304,7 +1321,7 @@ body {
 
 main {
   --padT: 3em;
-  padding-top: 3em;
+  padding-top: var(--padT);
   position: relative;
   background-color: transparent;
   overflow: hidden;
@@ -1382,6 +1399,10 @@ header .top {
   header .top {
     padding: 1em 0em 0.5em;
   }
+  header .top .btn-gradientBorder {
+    padding: 0px;
+    background: none;
+  }
 }
 header .top .logo {
   width: 200px;
@@ -1398,6 +1419,11 @@ header .top .logo {
   }
 }
 header .top .btn-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
   font-size: 2.5em;
   color: #F7931E;
 }
@@ -1442,7 +1468,6 @@ header nav ul li a:hover, header nav ul li a:focus, header nav ul li a:active {
 
 #offcanvasMenu {
   z-index: 499;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
@@ -2132,7 +2157,6 @@ header nav ul li a:hover, header nav ul li a:focus, header nav ul li a:active {
   z-index: 10;
   bottom: 0px;
   left: 0px;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   padding: 0.5em 1.5em;
@@ -2309,10 +2333,11 @@ header nav ul li a:hover, header nav ul li a:focus, header nav ul li a:active {
 }
 @media (max-width: 575.98px) {
   .cart-item {
-    grid-template-columns: 2fr 2fr 3fr 2fr;
+    grid-template-columns: 2fr 3fr;
     grid-template-rows: auto;
-    grid-template-areas: "image image title title" "image image articul articul" "image image price price" "count checkbox checkbox delete";
+    grid-template-areas: "image title" "image articul" "image price" "image checkbox" "delete count";
     gap: 0.5em;
+    padding: 0.75em;
   }
 }
 .cart-item img {
@@ -2350,6 +2375,11 @@ header nav ul li a:hover, header nav ul li a:focus, header nav ul li a:active {
 .cart-item label {
   grid-area: checkbox;
 }
+@media (max-width: 575.98px) {
+  .cart-item label {
+    font-size: 0.9em;
+  }
+}
 .cart-item .count {
   grid-area: count;
   display: flex;
@@ -2357,6 +2387,11 @@ header nav ul li a:hover, header nav ul li a:focus, header nav ul li a:active {
   justify-content: flex-end;
   align-items: center;
   flex-wrap: nowrap;
+}
+@media (max-width: 575.98px) {
+  .cart-item .count {
+    font-size: 1.2em;
+  }
 }
 .cart-item .count input {
   padding: 0.25em;
@@ -2389,8 +2424,8 @@ header nav ul li a:hover, header nav ul li a:focus, header nav ul li a:active {
 }
 @media (max-width: 575.98px) {
   .cart-item .price {
-    font-weight: 700;
-    font-size: 1.5em;
+    font-weight: 600;
+    font-size: 1.2em;
     justify-content: flex-start;
   }
 }
@@ -2404,6 +2439,12 @@ header nav ul li a:hover, header nav ul li a:focus, header nav ul li a:active {
   justify-content: flex-end;
   align-items: center;
   flex-wrap: nowrap;
+}
+@media (max-width: 575.98px) {
+  .cart-item-del {
+    text-align: left;
+    justify-content: flex-start;
+  }
 }
 
 .formCart {
@@ -2423,6 +2464,11 @@ header nav ul li a:hover, header nav ul li a:focus, header nav ul li a:active {
   justify-content: space-between;
   align-items: stretch;
   flex-wrap: nowrap;
+}
+@media (max-width: 1199.98px) {
+  .formCart-main .fs-15 {
+    font-size: 1.25em;
+  }
 }
 @media (max-width: 991.98px) {
   .formCart-main {
@@ -2476,7 +2522,6 @@ header nav ul li a:hover, header nav ul li a:focus, header nav ul li a:active {
   padding-bottom: 0px;
 }
 .sec-compare .wrap .swiper-free .swiper-slide {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
