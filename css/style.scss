@@ -1534,6 +1534,7 @@ header {
             background-position: 50% 85%;
             span {
                 background-color: $white;
+                @include textEllipsis();
                 &:last-child {
                     font-weight: 700;
                 }

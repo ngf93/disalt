@@ -1730,6 +1730,9 @@ header nav ul li a:hover, header nav ul li a:focus, header nav ul li a:active {
 }
 .product-card-characteristics li span {
   background-color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .product-card-characteristics li span:last-child {
   font-weight: 700;
