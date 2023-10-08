@@ -49,32 +49,55 @@
       </div>
       <nav>
         <ul>
-          <li>
-            <a href="index.html">
+          <li class="dropdown">
+            <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               <span>Главная</span>
               <img src="imgs/icons/chevron-down.svg" alt="down">
-            </a>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="about.html">О компании</a></li>
+              <li><a class="dropdown-item" href="guarantees.html">Гарантии</a></li>
+            </ul>
           </li>
-          <li>
-            <a href="catalog.html">
+          <li class="dropdown">
+            <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               <span>Продукция</span>
               <img src="imgs/icons/chevron-down.svg" alt="down">
-            </a>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="catalog.html">Дизельные генераторы</a></li>
+              <li><a class="dropdown-item" href="catalog.html">Блок-контейнеры</a></li>
+              <li><a class="dropdown-item" href="catalog.html">Осветительные мачты</a></li>
+            </ul>
           </li>
-          <li>
-            <a href="">
+          <li class="dropdown">
+            <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               <span>Комплектующие</span>
               <img src="imgs/icons/chevron-down.svg" alt="down">
-            </a>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="catalog.html">Категория 1</a></li>
+              <li><a class="dropdown-item" href="catalog.html">Категория 2</a></li>
+              <li><a class="dropdown-item" href="catalog.html">Категория 3</a></li>
+            </ul>
           </li>
-          <li>
-            <a href="">
+          <li class="dropdown">
+            <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               <span>Услуги</span>
               <img src="imgs/icons/chevron-down.svg" alt="down">
-            </a>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="delivery.html">Доставка</a></li>
+            </ul>
           </li>
-          <li>
-            <a href="">Поставщикам</a>
+          <li class="dropdown">
+            <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span>Поставщикам</span>
+              <img src="imgs/icons/chevron-down.svg" alt="down">
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="article.html">Как выбрать ДГУ?</a></li>
+            </ul>
           </li>
           <li>
             <a href="">Контакты</a>
@@ -93,34 +116,49 @@
         <nav>
           <ul>
             <li>
-              <a href="index.html">Главная</a>
+              <button type="button" onclick="toggleNext(this)">Главная</button>
+              <ul class="d-none">
+                <li><a href="about.html">О компании</a></li>
+                <li><a href="guarantees.html">Гарантии</a></li>
+              </ul>
             </li>
             <li>
-              <a href="catalog.html">Продукция</a>
+              <button type="button" onclick="toggleNext(this)">Продукция</button>
+              <ul class="d-none">
+                <li><a href="catalog.html">Дизельные генераторы</a></li>
+                <li><a href="catalog.html">Блок-контейнеры</a></li>
+                <li><a href="catalog.html">Осветительные мачты</a></li>
+              </ul>
             </li>
             <li>
-              <a href="">Комплектующие</a>
+              <button type="button" onclick="toggleNext(this)">Комплектующие</button>
+              <ul class="d-none">
+                <li><a href="catalog.html">Категория 1</a></li>
+                <li><a href="catalog.html">Категория 2</a></li>
+                <li><a href="catalog.html">Категория 3</a></li>
+              </ul>
             </li>
             <li>
-              <a href="">Услуги</a>
+              <button type="button" onclick="toggleNext(this)">Услуги</button>
+              <ul class="d-none">
+                <li><a href="delivery.html">Доставка</a></li>
+              </ul>
             </li>
             <li>
-              <a href="">Поставщикам</a>
-            </li>
-            <li>
-              <a href="about.html">О компании</a>
-            </li>
-            <li>
-              <a href="guarantees.html">Гарантии</a>
-            </li>
-            <li>
-              <a href="delivery.html">Доставка</a>
+              <button type="button" onclick="toggleNext(this)">Поставщикам</button>
+              <ul class="d-none">
+                <li><a href="article.html">Как выбрать ДГУ?</a></li>
+              </ul>
             </li>
             <li>
               <a href="">Контакты</a>
             </li>
           </ul>
         </nav>
+        <h4 class="mt-2">Бесплатный звонок</h4>
+        <a href="tel:+7 846 25 40 163" class="d-block">+7 846 25 40 163</a>
+        <h4 class="mt-3">Напишите нам</h4>
+        <a href="mailto:info@diz-alt.ru" class="d-block">info@diz-alt.ru</a>
       </div>
     </div>
 

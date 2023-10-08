@@ -5,9 +5,7 @@ let arrRanges = Array.from(document.querySelectorAll('.range'));
 arrRanges.forEach(item => {
     const min = item.dataset.min;
     const max = item.dataset.max;
-    // let valueMin = item.dataset.valueMin;
-    // let valueMax = item.dataset.valueMax;
-    console.log("min=" + min + " max=" + max);
+
     const inputMin = item.querySelector(".inputMin");
     const inputMax = item.querySelector(".inputMax");
     const rangeMin = item.querySelector(".rangeMin");
@@ -18,8 +16,6 @@ arrRanges.forEach(item => {
     rangeMin.value = min;
     inputMax.value = max;
     rangeMax.value = max;
-
-    
 
     inputMin.addEventListener('input', (e) => {
         rangeMin.value = e.target.value;

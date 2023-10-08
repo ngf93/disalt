@@ -656,6 +656,25 @@ button {
             }
         }
     }
+    &-compare {
+        @include flex();
+        font-size: 2em;
+        svg {
+            path {
+                transition: $transition;
+                stroke: $icon-color;
+                fill: $icon-color;
+            }
+        }
+        &.active {
+            svg {
+                path {
+                    stroke: url(#svgGradient);
+                    fill: url(#svgGradient);
+                }
+            }
+        }
+    }
 }
 
 label {
@@ -1186,6 +1205,19 @@ nav.pagination {
     }
 }
 
+.dropdown {
+    &-toggle {
+        &::after {
+            background: url(../imgs/icons/chevron-down.svg) no-repeat center;
+            border: none;
+        }
+    }
+    &-menu {
+        --bs-dropdown-link-active-bg: #F7931E;
+        li {margin-left: 0px !important;}
+    }
+}
+
 
 /* Main Styles*/
 html {
@@ -1297,7 +1329,7 @@ header {
                 &:not(:first-child){
                     margin-left: 1em;
                 }
-                a {
+                a, button {
                     font-size: 1.25em;
                     font-weight: 500;
                     color: $black;
@@ -1326,20 +1358,21 @@ header {
     nav {
         ul {
             @include list();
-            font-size: 1.1em;
+            font-size: 16px;
             font-weight: 500;
             li {
                 padding: 0.75em 0em;
                 &:not(:last-child){
                     border-bottom: 1px dotted $color-1;
                 }
-                a {
+                a, button {
                     display: block;
-                    &::after {
-                        content: "➤";
-                        color: $color-1;
-                        float: right;
-                    }
+                    font-weight: 500;
+                    // &::after {
+                    //     content: "➤";
+                    //     color: $color-1;
+                    //     float: right;
+                    // }
                 }
             }
         }
@@ -1538,6 +1571,13 @@ header {
         input {
             background-color: $black;
             color: $white;
+        }
+    }
+    h6 {
+        line-height: 1.2em;
+        height: 2.4em;
+        @media (max-width: $bp-sm) {
+            height: auto;
         }
     }
 }
@@ -1878,7 +1918,7 @@ header {
 }
 .geography {
     padding: 7% 0em;
-    background: url(../imgs/bg/russia.svg);
+    background: url(../imgs/bg/russiaMap.svg);
     background-size: auto 100%;
     background-position: -10% 50%;
     background-repeat: no-repeat;
@@ -2058,16 +2098,15 @@ header {
     font-size: 16px;
     &-item {
         --w: 130px;
-        margin-bottom: 1em;
+        margin-bottom: 1.5em;
         display: grid;
-        grid-template-columns: var(--w) auto 1fr 1fr;
-        grid-template-rows: 1em 1em auto 1em;
+        grid-template-columns: var(--w) auto 1fr 2.5em;
+        grid-template-rows: repeat(3, 1fr);
         gap: .5em 1em;
         grid-template-areas: 
         "image title title title"
-        "image articul articul articul"
-        "image checkbox count price"
-        "image . . delete";
+        "image articul price compare"
+        "image count delete compare";
         @media (max-width: $bp-xl) {
             --w: 100px;
         }
@@ -2083,7 +2122,7 @@ header {
             "image title"
             "image articul"
             "image price"
-            "image checkbox"
+            "image compare"
             "delete count";
             gap: .5em;
             padding: 0.75em;
@@ -2113,15 +2152,15 @@ header {
             grid-area: articul;
             font-size: .8em;
         }
-        label {
-            grid-area: checkbox;
-            @media (max-width: $bp-sm) {
-                font-size: .9em;
-            }
-        }
+        // label {
+        //     grid-area: checkbox;
+        //     @media (max-width: $bp-sm) {
+        //         font-size: .9em;
+        //     }
+        // }
         .count {
             grid-area: count;
-            @include flex(row, flex-end, center, nowrap);
+            @include flex(row, flex-start, center, nowrap);
             @media (max-width: $bp-sm) {
                 font-size: 1.2em;
             }
@@ -2160,6 +2199,10 @@ header {
                 text-align: left;
                 justify-content: flex-start;
             }
+        }
+        .btn-compare {
+            grid-area: compare;
+            justify-content: flex-start;
         }
     }
 }

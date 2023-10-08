@@ -49,32 +49,55 @@
       </div>
       <nav>
         <ul>
-          <li>
-            <a href="index.html">
+          <li class="dropdown">
+            <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               <span>Главная</span>
               <img src="imgs/icons/chevron-down.svg" alt="down">
-            </a>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="about.html">О компании</a></li>
+              <li><a class="dropdown-item" href="guarantees.html">Гарантии</a></li>
+            </ul>
           </li>
-          <li>
-            <a href="catalog.html">
+          <li class="dropdown">
+            <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               <span>Продукция</span>
               <img src="imgs/icons/chevron-down.svg" alt="down">
-            </a>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="catalog.html">Дизельные генераторы</a></li>
+              <li><a class="dropdown-item" href="catalog.html">Блок-контейнеры</a></li>
+              <li><a class="dropdown-item" href="catalog.html">Осветительные мачты</a></li>
+            </ul>
           </li>
-          <li>
-            <a href="">
+          <li class="dropdown">
+            <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               <span>Комплектующие</span>
               <img src="imgs/icons/chevron-down.svg" alt="down">
-            </a>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="catalog.html">Категория 1</a></li>
+              <li><a class="dropdown-item" href="catalog.html">Категория 2</a></li>
+              <li><a class="dropdown-item" href="catalog.html">Категория 3</a></li>
+            </ul>
           </li>
-          <li>
-            <a href="">
+          <li class="dropdown">
+            <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               <span>Услуги</span>
               <img src="imgs/icons/chevron-down.svg" alt="down">
-            </a>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="delivery.html">Доставка</a></li>
+            </ul>
           </li>
-          <li>
-            <a href="">Поставщикам</a>
+          <li class="dropdown">
+            <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span>Поставщикам</span>
+              <img src="imgs/icons/chevron-down.svg" alt="down">
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="article.html">Как выбрать ДГУ?</a></li>
+            </ul>
           </li>
           <li>
             <a href="">Контакты</a>
@@ -93,34 +116,49 @@
         <nav>
           <ul>
             <li>
-              <a href="index.html">Главная</a>
+              <button type="button" onclick="toggleNext(this)">Главная</button>
+              <ul class="d-none">
+                <li><a href="about.html">О компании</a></li>
+                <li><a href="guarantees.html">Гарантии</a></li>
+              </ul>
             </li>
             <li>
-              <a href="catalog.html">Продукция</a>
+              <button type="button" onclick="toggleNext(this)">Продукция</button>
+              <ul class="d-none">
+                <li><a href="catalog.html">Дизельные генераторы</a></li>
+                <li><a href="catalog.html">Блок-контейнеры</a></li>
+                <li><a href="catalog.html">Осветительные мачты</a></li>
+              </ul>
             </li>
             <li>
-              <a href="">Комплектующие</a>
+              <button type="button" onclick="toggleNext(this)">Комплектующие</button>
+              <ul class="d-none">
+                <li><a href="catalog.html">Категория 1</a></li>
+                <li><a href="catalog.html">Категория 2</a></li>
+                <li><a href="catalog.html">Категория 3</a></li>
+              </ul>
             </li>
             <li>
-              <a href="">Услуги</a>
+              <button type="button" onclick="toggleNext(this)">Услуги</button>
+              <ul class="d-none">
+                <li><a href="delivery.html">Доставка</a></li>
+              </ul>
             </li>
             <li>
-              <a href="">Поставщикам</a>
-            </li>
-            <li>
-              <a href="about.html">О компании</a>
-            </li>
-            <li>
-              <a href="guarantees.html">Гарантии</a>
-            </li>
-            <li>
-              <a href="delivery.html">Доставка</a>
+              <button type="button" onclick="toggleNext(this)">Поставщикам</button>
+              <ul class="d-none">
+                <li><a href="article.html">Как выбрать ДГУ?</a></li>
+              </ul>
             </li>
             <li>
               <a href="">Контакты</a>
             </li>
           </ul>
         </nav>
+        <h4 class="mt-2">Бесплатный звонок</h4>
+        <a href="tel:+7 846 25 40 163" class="d-block">+7 846 25 40 163</a>
+        <h4 class="mt-3">Напишите нам</h4>
+        <a href="mailto:info@diz-alt.ru" class="d-block">info@diz-alt.ru</a>
       </div>
     </div>
 
@@ -146,10 +184,6 @@
                   <img src="imgs/product.png" alt="Дизельная электростанция АД10">
                   <h5>Дизельная электростанция АД10</h5>
                   <p class="articul">Код товара: 2556566</p>
-                  <label>
-                    <input type="checkbox">
-                    <p class="ms-2">С&nbsp;доставкой</p>
-                  </label>
                   <div class="count">
                     <button type="button" class="minus">
                       <svg width="7" height="7" viewBox="0 0 7 1" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -165,15 +199,24 @@
                   </div>
                   <div class="price">20 999 ₽</div>
                   <button type="button" class="cart-item-del">Удалить</button>
+                  <button type="button" class="btn-compare" onclick="toggleActive(this)">
+                    <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g mask="url(#mask0_2_18)">
+                        <path d="M30.4725 15.2526L30.6168 15.5026H30.9055H30.9729C31.2641 15.5026 31.5001 15.7384 31.5003 16.03C31.5002 19.24 28.8879 21.8522 25.6779 21.8522C22.4678 21.8522 19.8555 19.2399 19.8555 16.0297C19.8555 15.7384 20.0913 15.5026 20.3826 15.5026H20.4501H20.7388L20.8831 15.2526L24.5992 8.81607L25.0322 8.06607H24.1662H17.0274H16.5274V8.56607V27.4192V27.9192H17.0274H20.3826C21.4028 27.9192 22.2336 28.7499 22.2336 29.7701C22.2336 30.7903 21.4028 31.6211 20.3826 31.6211H11.6179C10.5978 31.6211 9.76697 30.7903 9.76697 29.7701C9.76697 28.7499 10.5977 27.9192 11.6179 27.9192H14.9732H15.4732V27.4192V8.56607V8.06607H14.9732H7.83436H6.96835L7.40134 8.81606L11.1174 15.2526L11.2617 15.5026H11.5504H11.6178C11.9089 15.5026 12.1449 15.7385 12.1449 16.0297C12.1449 19.2399 9.53259 21.8522 6.32246 21.8522C3.11233 21.8522 0.5 19.2399 0.5 16.0297C0.5 15.7385 0.735955 15.5026 1.02711 15.5026H1.09462H1.3833L1.52763 15.2526L5.24371 8.81607L5.67672 8.06607H4.8107H2.85727C2.56614 8.06607 2.33017 7.83015 2.33017 7.53896V6.07814C2.33017 5.78695 2.56614 5.55103 2.85727 5.55103H14.9729H15.4729V5.05103V2.19801C15.4729 1.90682 15.7089 1.6709 16 1.6709C16.2912 1.6709 16.5271 1.90676 16.5271 2.19801V5.05103V5.55103H17.0271H29.1427C29.4339 5.55103 29.6698 5.78689 29.6698 6.07814V7.53896C29.6698 7.83021 29.4339 8.06607 29.1427 8.06607H27.1894H26.3234L26.7564 8.81607L30.4725 15.2526ZM3.03354 14.7526L2.60052 15.5026H3.46655H9.17837H10.0444L9.61138 14.7526L6.75547 9.8061L6.32246 9.05611L5.88945 9.8061L3.03354 14.7526ZM26.1107 9.8061L25.6777 9.05611L25.2447 9.8061L22.3888 14.7526L21.9558 15.5026H22.8218H28.5336H29.3996L28.9666 14.7526L26.1107 9.8061Z" fill="url(#svgGradient)" stroke="url(#svgGradient)"/>
+                      </g>
+                      <defs>
+                        <linearGradient id="svgGradient" x1="31.6683" y1="16.6422" x2="-1.57928e-07" y2="16.6422" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#F7931E"/>
+                        <stop offset="1" stop-color="#FFE500"/>
+                        </linearGradient>
+                      </defs>
+                      </svg>
+                  </button>
                 </li>
                 <li class="cart-item">
                   <img src="imgs/product.png" alt="Дизельная электростанция АД10">
                   <h5>Дизельная электростанция АД10</h5>
                   <p class="articul">Код товара: 2556566</p>
-                  <label>
-                    <input type="checkbox">
-                    <p class="ms-2">С&nbsp;доставкой</p>
-                  </label>
                   <div class="count">
                     <button type="button" class="minus">
                       <svg width="7" height="7" viewBox="0 0 7 1" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -189,15 +232,24 @@
                   </div>
                   <div class="price">20 999 ₽</div>
                   <button type="button" class="cart-item-del">Удалить</button>
+                  <button type="button" class="btn-compare" onclick="toggleActive(this)">
+                    <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g mask="url(#mask0_2_18)">
+                        <path d="M30.4725 15.2526L30.6168 15.5026H30.9055H30.9729C31.2641 15.5026 31.5001 15.7384 31.5003 16.03C31.5002 19.24 28.8879 21.8522 25.6779 21.8522C22.4678 21.8522 19.8555 19.2399 19.8555 16.0297C19.8555 15.7384 20.0913 15.5026 20.3826 15.5026H20.4501H20.7388L20.8831 15.2526L24.5992 8.81607L25.0322 8.06607H24.1662H17.0274H16.5274V8.56607V27.4192V27.9192H17.0274H20.3826C21.4028 27.9192 22.2336 28.7499 22.2336 29.7701C22.2336 30.7903 21.4028 31.6211 20.3826 31.6211H11.6179C10.5978 31.6211 9.76697 30.7903 9.76697 29.7701C9.76697 28.7499 10.5977 27.9192 11.6179 27.9192H14.9732H15.4732V27.4192V8.56607V8.06607H14.9732H7.83436H6.96835L7.40134 8.81606L11.1174 15.2526L11.2617 15.5026H11.5504H11.6178C11.9089 15.5026 12.1449 15.7385 12.1449 16.0297C12.1449 19.2399 9.53259 21.8522 6.32246 21.8522C3.11233 21.8522 0.5 19.2399 0.5 16.0297C0.5 15.7385 0.735955 15.5026 1.02711 15.5026H1.09462H1.3833L1.52763 15.2526L5.24371 8.81607L5.67672 8.06607H4.8107H2.85727C2.56614 8.06607 2.33017 7.83015 2.33017 7.53896V6.07814C2.33017 5.78695 2.56614 5.55103 2.85727 5.55103H14.9729H15.4729V5.05103V2.19801C15.4729 1.90682 15.7089 1.6709 16 1.6709C16.2912 1.6709 16.5271 1.90676 16.5271 2.19801V5.05103V5.55103H17.0271H29.1427C29.4339 5.55103 29.6698 5.78689 29.6698 6.07814V7.53896C29.6698 7.83021 29.4339 8.06607 29.1427 8.06607H27.1894H26.3234L26.7564 8.81607L30.4725 15.2526ZM3.03354 14.7526L2.60052 15.5026H3.46655H9.17837H10.0444L9.61138 14.7526L6.75547 9.8061L6.32246 9.05611L5.88945 9.8061L3.03354 14.7526ZM26.1107 9.8061L25.6777 9.05611L25.2447 9.8061L22.3888 14.7526L21.9558 15.5026H22.8218H28.5336H29.3996L28.9666 14.7526L26.1107 9.8061Z" fill="url(#svgGradient)" stroke="url(#svgGradient)"/>
+                      </g>
+                      <defs>
+                        <linearGradient id="svgGradient" x1="31.6683" y1="16.6422" x2="-1.57928e-07" y2="16.6422" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#F7931E"/>
+                        <stop offset="1" stop-color="#FFE500"/>
+                        </linearGradient>
+                      </defs>
+                      </svg>
+                  </button>
                 </li>
                 <li class="cart-item">
                   <img src="imgs/product.png" alt="Дизельная электростанция АД10">
                   <h5>Дизельная электростанция АД10</h5>
                   <p class="articul">Код товара: 2556566</p>
-                  <label>
-                    <input type="checkbox">
-                    <p class="ms-2">С&nbsp;доставкой</p>
-                  </label>
                   <div class="count">
                     <button type="button" class="minus">
                       <svg width="7" height="7" viewBox="0 0 7 1" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -213,6 +265,19 @@
                   </div>
                   <div class="price">20 999 ₽</div>
                   <button type="button" class="cart-item-del">Удалить</button>
+                  <button type="button" class="btn-compare" onclick="toggleActive(this)">
+                    <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g mask="url(#mask0_2_18)">
+                        <path d="M30.4725 15.2526L30.6168 15.5026H30.9055H30.9729C31.2641 15.5026 31.5001 15.7384 31.5003 16.03C31.5002 19.24 28.8879 21.8522 25.6779 21.8522C22.4678 21.8522 19.8555 19.2399 19.8555 16.0297C19.8555 15.7384 20.0913 15.5026 20.3826 15.5026H20.4501H20.7388L20.8831 15.2526L24.5992 8.81607L25.0322 8.06607H24.1662H17.0274H16.5274V8.56607V27.4192V27.9192H17.0274H20.3826C21.4028 27.9192 22.2336 28.7499 22.2336 29.7701C22.2336 30.7903 21.4028 31.6211 20.3826 31.6211H11.6179C10.5978 31.6211 9.76697 30.7903 9.76697 29.7701C9.76697 28.7499 10.5977 27.9192 11.6179 27.9192H14.9732H15.4732V27.4192V8.56607V8.06607H14.9732H7.83436H6.96835L7.40134 8.81606L11.1174 15.2526L11.2617 15.5026H11.5504H11.6178C11.9089 15.5026 12.1449 15.7385 12.1449 16.0297C12.1449 19.2399 9.53259 21.8522 6.32246 21.8522C3.11233 21.8522 0.5 19.2399 0.5 16.0297C0.5 15.7385 0.735955 15.5026 1.02711 15.5026H1.09462H1.3833L1.52763 15.2526L5.24371 8.81607L5.67672 8.06607H4.8107H2.85727C2.56614 8.06607 2.33017 7.83015 2.33017 7.53896V6.07814C2.33017 5.78695 2.56614 5.55103 2.85727 5.55103H14.9729H15.4729V5.05103V2.19801C15.4729 1.90682 15.7089 1.6709 16 1.6709C16.2912 1.6709 16.5271 1.90676 16.5271 2.19801V5.05103V5.55103H17.0271H29.1427C29.4339 5.55103 29.6698 5.78689 29.6698 6.07814V7.53896C29.6698 7.83021 29.4339 8.06607 29.1427 8.06607H27.1894H26.3234L26.7564 8.81607L30.4725 15.2526ZM3.03354 14.7526L2.60052 15.5026H3.46655H9.17837H10.0444L9.61138 14.7526L6.75547 9.8061L6.32246 9.05611L5.88945 9.8061L3.03354 14.7526ZM26.1107 9.8061L25.6777 9.05611L25.2447 9.8061L22.3888 14.7526L21.9558 15.5026H22.8218H28.5336H29.3996L28.9666 14.7526L26.1107 9.8061Z" fill="url(#svgGradient)" stroke="url(#svgGradient)"/>
+                      </g>
+                      <defs>
+                        <linearGradient id="svgGradient" x1="31.6683" y1="16.6422" x2="-1.57928e-07" y2="16.6422" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#F7931E"/>
+                        <stop offset="1" stop-color="#FFE500"/>
+                        </linearGradient>
+                      </defs>
+                      </svg>
+                  </button>
                 </li>
               </ul>
             </div>

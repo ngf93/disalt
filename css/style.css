@@ -257,6 +257,11 @@ input::-moz-placeholder, textarea::-moz-placeholder {
   font-weight: 400;
   font-size: 0.9em;
 }
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color: #a3a3a3;
+  font-weight: 400;
+  font-size: 0.9em;
+}
 input::placeholder, textarea::placeholder {
   color: #a3a3a3;
   font-weight: 400;
@@ -484,9 +489,11 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   border-radius: 50%;
   background-color: #F7931E;
   transform: translateY(-0.4em);
+  cursor: -webkit-grab;
   cursor: grab;
 }
 .range-slider input::-webkit-slider-thumb:active {
+  cursor: -webkit-grabbing;
   cursor: grabbing;
 }
 .range-slider-diapason {
@@ -551,6 +558,7 @@ button {
   padding: 1em 1.5em;
   text-align: center;
   transition: 300ms ease-in;
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   border: none;
@@ -689,6 +697,23 @@ button {
 .btn-icon.active svg path {
   stroke: #F7931E;
   fill: #F7931E;
+}
+.btn-compare {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  font-size: 2em;
+}
+.btn-compare svg path {
+  transition: 300ms ease-in;
+  stroke: #E3EBEF;
+  fill: #E3EBEF;
+}
+.btn-compare.active svg path {
+  stroke: url(#svgGradient);
+  fill: url(#svgGradient);
 }
 
 label {
@@ -1296,6 +1321,17 @@ nav.pagination ul li button:hover, nav.pagination ul li button:focus, nav.pagina
   opacity: 1;
 }
 
+.dropdown-toggle::after {
+  background: url(../imgs/icons/chevron-down.svg) no-repeat center;
+  border: none;
+}
+.dropdown-menu {
+  --bs-dropdown-link-active-bg: #F7931E;
+}
+.dropdown-menu li {
+  margin-left: 0px !important;
+}
+
 /* Main Styles*/
 html {
   scroll-behavior: smooth;
@@ -1451,7 +1487,7 @@ header nav ul {
 header nav ul li:not(:first-child) {
   margin-left: 1em;
 }
-header nav ul li a {
+header nav ul li a, header nav ul li button {
   font-size: 1.25em;
   font-weight: 500;
   color: #181818;
@@ -1462,10 +1498,10 @@ header nav ul li a {
   align-items: center;
   flex-wrap: nowrap;
 }
-header nav ul li a img {
+header nav ul li a img, header nav ul li button img {
   margin-left: 0.25em;
 }
-header nav ul li a:hover, header nav ul li a:focus, header nav ul li a:active {
+header nav ul li a:hover, header nav ul li a:focus, header nav ul li a:active, header nav ul li button:hover, header nav ul li button:focus, header nav ul li button:active {
   color: #F7931E;
 }
 
@@ -1490,7 +1526,7 @@ header nav ul li a:hover, header nav ul li a:focus, header nav ul li a:active {
 #offcanvasMenu nav ul {
   list-style: none;
   padding-left: 0px;
-  font-size: 1.1em;
+  font-size: 16px;
   font-weight: 500;
 }
 #offcanvasMenu nav ul li {
@@ -1499,13 +1535,9 @@ header nav ul li a:hover, header nav ul li a:focus, header nav ul li a:active {
 #offcanvasMenu nav ul li:not(:last-child) {
   border-bottom: 1px dotted #F7931E;
 }
-#offcanvasMenu nav ul li a {
+#offcanvasMenu nav ul li a, #offcanvasMenu nav ul li button {
   display: block;
-}
-#offcanvasMenu nav ul li a::after {
-  content: "➤";
-  color: #F7931E;
-  float: right;
+  font-weight: 500;
 }
 
 /* Header END */
@@ -1723,6 +1755,15 @@ header nav ul li a:hover, header nav ul li a:focus, header nav ul li a:active {
 .generate .input input {
   background-color: #181818;
   color: #fff;
+}
+.generate h6 {
+  line-height: 1.2em;
+  height: 2.4em;
+}
+@media (max-width: 575.98px) {
+  .generate h6 {
+    height: auto;
+  }
 }
 
 /* Product */
@@ -2152,7 +2193,7 @@ header nav ul li a:hover, header nav ul li a:focus, header nav ul li a:active {
 
 .geography {
   padding: 7% 0em;
-  background: url(../imgs/bg/russia.svg);
+  background: url(../imgs/bg/russiaMap.svg);
   background-size: auto 100%;
   background-position: -10% 50%;
   background-repeat: no-repeat;
@@ -2216,6 +2257,7 @@ header nav ul li a:hover, header nav ul li a:focus, header nav ul li a:active {
   z-index: 10;
   bottom: 0px;
   left: 0px;
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   padding: 0.5em 1.5em;
@@ -2368,12 +2410,12 @@ header nav ul li a:hover, header nav ul li a:focus, header nav ul li a:active {
 }
 .cart-item {
   --w: 130px;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
   display: grid;
-  grid-template-columns: var(--w) auto 1fr 1fr;
-  grid-template-rows: 1em 1em auto 1em;
+  grid-template-columns: var(--w) auto 1fr 2.5em;
+  grid-template-rows: repeat(3, 1fr);
   gap: 0.5em 1em;
-  grid-template-areas: "image title title title" "image articul articul articul" "image checkbox count price" "image . . delete";
+  grid-template-areas: "image title title title" "image articul price compare" "image count delete compare";
 }
 @media (max-width: 1199.98px) {
   .cart-item {
@@ -2394,7 +2436,7 @@ header nav ul li a:hover, header nav ul li a:focus, header nav ul li a:active {
   .cart-item {
     grid-template-columns: 2fr 3fr;
     grid-template-rows: auto;
-    grid-template-areas: "image title" "image articul" "image price" "image checkbox" "delete count";
+    grid-template-areas: "image title" "image articul" "image price" "image compare" "delete count";
     gap: 0.5em;
     padding: 0.75em;
   }
@@ -2431,19 +2473,11 @@ header nav ul li a:hover, header nav ul li a:focus, header nav ul li a:active {
   grid-area: articul;
   font-size: 0.8em;
 }
-.cart-item label {
-  grid-area: checkbox;
-}
-@media (max-width: 575.98px) {
-  .cart-item label {
-    font-size: 0.9em;
-  }
-}
 .cart-item .count {
   grid-area: count;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: nowrap;
 }
@@ -2504,6 +2538,10 @@ header nav ul li a:hover, header nav ul li a:focus, header nav ul li a:active {
     text-align: left;
     justify-content: flex-start;
   }
+}
+.cart-item .btn-compare {
+  grid-area: compare;
+  justify-content: flex-start;
 }
 
 .formCart {
@@ -2581,6 +2619,7 @@ header nav ul li a:hover, header nav ul li a:focus, header nav ul li a:active {
   padding-bottom: 0px;
 }
 .sec-compare .wrap .swiper-free .swiper-slide {
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
