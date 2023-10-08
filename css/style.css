@@ -2657,14 +2657,20 @@ header nav ul li a:hover, header nav ul li a:focus, header nav ul li a:active, h
   padding-bottom: 2em;
 }
 .sec-compare .swiper-button, .sec-compare .swiper-button-prev, .sec-compare .swiper-button-next {
-  display: none !important;
+  display: block;
   color: #373737;
   background-color: transparent;
   width: 1.5em;
   height: 1.5em;
-}
-.sec-compare .swiper-button::after, .sec-compare .swiper-button-prev::after, .sec-compare .swiper-button-next::after {
-  font-size: 1em;
+  bottom: 0px;
+  top: unset;
+  transform: unset;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  color: #fff;
 }
 .sec-compare .swiper-button-prev {
   left: 20%;
@@ -2677,19 +2683,8 @@ header nav ul li a:hover, header nav ul li a:focus, header nav ul li a:active, h
   display: none !important;
 }
 .sec-compare .swiper-pagination-fraction {
-  display: none;
   font-weight: 700;
   bottom: 0.25em;
-}
-@media (max-width: 767.98px) {
-  .sec-compare-block div:nth-child(3) {
-    display: none;
-  }
-}
-@media (max-width: 1199.98px) {
-  .sec-compare-block div:nth-child(4) {
-    display: none;
-  }
 }
 
 .deleteAll svg {

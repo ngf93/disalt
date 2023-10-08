@@ -2305,14 +2305,19 @@ header {
             padding-bottom: 2em;
         }
         &-button {
-            display: none !important;
+            display: block;
             color: $dark-gray;
             background-color: transparent;
             width: 1.5em;
             height: 1.5em;
-            &::after {
-                font-size: 1em;
-            }
+            bottom: 0px;
+            top: unset;
+            transform: unset;
+            @include flex();
+            color: $white;
+            // &::after {
+            //     font-size: 1em;
+            // }
             &-prev {
                 left: 20%;
                 right: unset;
@@ -2325,25 +2330,24 @@ header {
             }
         }
         &-pagination-fraction {
-            display: none;
             font-weight: 700;
             bottom: 0.25em;
         }
     }
-    &-block {
-        div {
-            &:nth-child(3){
-                @media (max-width: $bp-md) {
-                    display: none;
-                }
-            }
-            &:nth-child(4){
-                @media (max-width: $bp-xl) {
-                    display: none;
-                }
-            }
-        }
-    }
+    // &-block {
+    //     div {
+    //         &:nth-child(3){
+    //             @media (max-width: $bp-md) {
+    //                 display: none;
+    //             }
+    //         }
+    //         &:nth-child(4){
+    //             @media (max-width: $bp-xl) {
+    //                 display: none;
+    //             }
+    //         }
+    //     }
+    // }
 }
 .deleteAll {
     svg {

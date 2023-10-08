@@ -66,6 +66,50 @@ const swiper2 = new Swiper('.swiper-5', {
   }
 });
 
+
+const swiper9 = new Swiper('.swiper-specifications', {
+  initialSlide: 0,
+  slidesPerView: 1,
+  spaceBetween: 20,
+  navigation: false,
+  pagination: false,
+  rewind: true,
+  grabCursor: false,
+  simulateTouch: false,
+  allowTouchMove: false
+});
+const swiper10 = new Swiper('.swiper-compare', {
+  init: false,
+  initialSlide: 0,
+  slidesPerView: 1,
+  spaceBetween: 20,
+  rewind: true,
+  controller: {
+    control: swiper9,
+    by: 'slide',
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    type: "fraction",
+    renderFraction: function (currentClass, totalClass) {
+      return '<span class="' + currentClass + '"></span>' +
+              ' из ' +
+              '<span class="' + totalClass + '"></span>';
+    }
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+swiper10.on('init', () => {
+  updateSlider(swiper10, swiper10.slides.length)
+});
+swiper10.on('resize', () => {
+  updateSlider(swiper10, swiper10.slides.length)
+});
+swiper10.init();
+
 const swiper91 = new Swiper('.swiper-specifications-1', {
   initialSlide: 0,
   slidesPerView: 1,
