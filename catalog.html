@@ -210,6 +210,41 @@
                     </div>
                   </div>
                 </div>
+
+                <div class="filterForm-item">
+                  <button class="filterForm-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false">
+                    <span>Мощность ДГУ, кВт</span>
+                    <img src="imgs/icons/arrow-down.svg" alt="arrow-down" class="icon">
+                  </button>
+                  <div id="collapse-3" class="collapse" >
+                    <div class="range py-3" data-min="0" data-max="100000">
+                      <div class="d-flex align-items-center mb-3">
+                        <div class="input">
+                          <input type="number" placeholder="от" min="0" max="100000" class="inputMin">
+                        </div>
+                        <div class="input ms-4">
+                          <input type="number" placeholder="до" min="0" max="100000" class="inputMax">
+                        </div>
+                      </div>
+                      
+                      <div class="range-slider">
+                        <div class="range-slider-diapason"></div>
+                        <input 
+                          class="rangeMin"
+                          type="range" 
+                          min="0"
+                          max="100000"
+                        />
+                        <input
+                          class="rangeMax"
+                          type="range"
+                          min="0"
+                          max="100000"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
     
                 <div class="filterForm-item">
                   <button class="filterForm-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false">
@@ -251,41 +286,6 @@
                         </label>
                       </li>
                     </ul>
-                  </div>
-                </div>
-    
-                <div class="filterForm-item">
-                  <button class="filterForm-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false">
-                    <span>Мощность двигателя, кВт</span>
-                    <img src="imgs/icons/arrow-down.svg" alt="arrow-down" class="icon">
-                  </button>
-                  <div id="collapse-3" class="collapse" >
-                    <div class="range py-3" data-min="0" data-max="100000">
-                      <div class="d-flex align-items-center mb-3">
-                        <div class="input">
-                          <input type="number" placeholder="от" min="0" max="100000" class="inputMin">
-                        </div>
-                        <div class="input ms-4">
-                          <input type="number" placeholder="до" min="0" max="100000" class="inputMax">
-                        </div>
-                      </div>
-                      
-                      <div class="range-slider">
-                        <div class="range-slider-diapason"></div>
-                        <input 
-                          class="rangeMin"
-                          type="range" 
-                          min="0"
-                          max="100000"
-                        />
-                        <input
-                          class="rangeMax"
-                          type="range"
-                          min="0"
-                          max="100000"
-                        />
-                      </div>
-                    </div>
                   </div>
                 </div>
     
@@ -335,6 +335,33 @@
                           <input type="checkbox">
                           <div class="ms-2 flex-1">
                             <span>Блок-сендвич</span><span class="gray ms-1">(27)</span>
+                          </div>
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="filterForm-item">
+                  <button class="filterForm-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false">
+                    <span>Автоматизация</span>
+                    <img src="imgs/icons/arrow-down.svg" alt="arrow-down" class="icon">
+                  </button>
+                  <div id="collapse3" class="collapse" >
+                    <ul class="filterForm-list">
+                      <li>
+                        <label>
+                          <input type="checkbox">
+                          <div class="ms-2 flex-1">
+                            <span>1-я степень 35</span><span class="gray ms-1">(15)</span>
+                          </div>
+                        </label>
+                      </li>
+                      <li>
+                        <label>
+                          <input type="checkbox">
+                          <div class="ms-2 flex-1">
+                            <span>2-я степень 87</span><span class="gray ms-1">(27)</span>
                           </div>
                         </label>
                       </li>
