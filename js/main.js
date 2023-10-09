@@ -9,3 +9,8 @@ function toggleList(id){
 function toggleNext(btn){
     btn.nextElementSibling.classList.toggle('d-none');
 }
+
+function toggleCharacteristics(btn, id){
+    btn.classList.toggle('full');
+    document.getElementById(id).classList.toggle('full');
+}

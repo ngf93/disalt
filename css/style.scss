@@ -1210,11 +1210,26 @@ nav.pagination {
         &::after {
             background: url(../imgs/icons/chevron-down.svg) no-repeat center;
             border: none;
+            width: 0.75em;
+            height: 0.5em;
+            transform: rotate(0deg);
+            transition: transform $transition;
+        }
+        &[aria-expanded="true"]{
+            &::after {
+                transform: rotate(-180deg);
+            }
         }
     }
     &-menu {
         --bs-dropdown-link-active-bg: #F7931E;
-        li {margin-left: 0px !important;}
+        font-size: .9em;
+        li {
+            margin-left: 0px !important;
+            a {
+                padding: 0.35em 0.75em;
+            }
+        }
     }
 }
 
@@ -1802,6 +1817,7 @@ header {
     }
     .product-card-characteristics {
         font-size: 1em;
+        line-height: 1.2em;
         li {
             margin-bottom: 1em;
         }
@@ -1860,6 +1876,23 @@ header {
     }
     p {
         margin-bottom: .75em;
+    }
+}
+#allChars {
+    overflow: hidden;
+    max-height: 6.6em;
+    &.full {
+        max-height: max-content;
+    }
+}
+.show-allChars {
+    &::after {
+        content: 'Показать все';
+    }
+    &.full {
+        &::after {
+            content: 'Скрыть';
+        }
     }
 }
 /* Product End */

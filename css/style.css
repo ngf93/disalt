@@ -1324,12 +1324,23 @@ nav.pagination ul li button:hover, nav.pagination ul li button:focus, nav.pagina
 .dropdown-toggle::after {
   background: url(../imgs/icons/chevron-down.svg) no-repeat center;
   border: none;
+  width: 0.75em;
+  height: 0.5em;
+  transform: rotate(0deg);
+  transition: transform 300ms ease-in;
+}
+.dropdown-toggle[aria-expanded=true]::after {
+  transform: rotate(-180deg);
 }
 .dropdown-menu {
   --bs-dropdown-link-active-bg: #F7931E;
+  font-size: 0.9em;
 }
 .dropdown-menu li {
   margin-left: 0px !important;
+}
+.dropdown-menu li a {
+  padding: 0.35em 0.75em;
 }
 
 /* Main Styles*/
@@ -2066,6 +2077,7 @@ header nav ul li a:hover, header nav ul li a:focus, header nav ul li a:active, h
 }
 .product-page .product-card-characteristics {
   font-size: 1em;
+  line-height: 1.2em;
 }
 .product-page .product-card-characteristics li {
   margin-bottom: 1em;
@@ -2138,6 +2150,23 @@ header nav ul li a:hover, header nav ul li a:focus, header nav ul li a:active, h
 }
 .product-page p {
   margin-bottom: 0.75em;
+}
+
+#allChars {
+  overflow: hidden;
+  max-height: 6.6em;
+}
+#allChars.full {
+  max-height: -webkit-max-content;
+  max-height: -moz-max-content;
+  max-height: max-content;
+}
+
+.show-allChars::after {
+  content: "Показать все";
+}
+.show-allChars.full::after {
+  content: "Скрыть";
 }
 
 /* Product End */
